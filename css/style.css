@@ -1,0 +1,16 @@
+body { background-color: black; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
+#cursor { position: fixed; top: -3px; left: -3px; width: 5px; height: 5px; background-color: white; border-radius: 50%; pointer-events: none; z-index: 999; }
+#cursor-border { animation: morphing-image 10s linear infinite forwards; --size: 30px; position: fixed; top: calc(var(--size) / -2); left: calc(var(--size) / -2); width: var(--size); height: var(--size); border-radius: 50%; box-shadow: 0 0 0 1px white; pointer-events: none; transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out, height 0.15s ease-out, background-color 0.15s ease-out; z-index: 999; }
+@keyframes morphing-image {
+    0% {border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+    10% {border-radius: 39% 61% 38% 62% / 53% 54% 46% 47%; }
+    20% {border-radius: 56% 44% 52% 48% / 57% 35% 65% 43%; }
+    30% {border-radius: 41% 59% 45% 55% / 43% 56% 44% 57%; }
+    40% {border-radius: 46% 54% 60% 40% / 55% 65% 26% 45%; }
+    50% {border-radius: 44% 56% 42% 65% / 41% 65% 46% 69%; }
+    60% {border-radius: 41% 69% 42% 68% / 41% 71% 29% 69%; }
+    70% {border-radius: 44% 56% 60% 40% / 63% 46% 64% 37%; }
+    80% {border-radius: 46% 54% 38% 62% / 44% 48% 52% 56%; }
+    90% {border-radius: 66% 45% 57% 43% / 49% 51% 49% 51%; }
+    100% {border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+}
